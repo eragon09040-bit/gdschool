@@ -1,0 +1,15 @@
+<h1>Логика игры: Шаг 2 - Управление</h1><hr>
+
+<p>Для управления змейкой мы используем встроенную функцию <code>_input()</code>. Она отлавливает нажатия клавиш (стрелочек) и меняет направление движения.</p>
+
+<p>Важное условие: змейка не может мгновенно развернуться на 180 градусов (например, поехать влево, если двигалась вправо). Поэтому мы добавляем проверки текущего направления.</p>
+
+<pre style="background-color: #1e1e1e; padding: 15px; border-radius: 8px; overflow-x: auto; border: 1px solid #444; color: #d4d4d4;"><code>func _input(event):
+    if event.is_action_pressed("ui_up") and direction != Vector2i.DOWN:
+        next_direction = Vector2i.UP
+    elif event.is_action_pressed("ui_down") and direction != Vector2i.UP:
+        next_direction = Vector2i.DOWN
+    elif event.is_action_pressed("ui_left") and direction != Vector2i.RIGHT:
+        next_direction = Vector2i.LEFT
+    elif event.is_action_pressed("ui_right") and direction != Vector2i.LEFT:
+        next_direction = Vector2i.RIGHT</code></pre>

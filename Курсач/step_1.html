@@ -1,0 +1,28 @@
+<h1>Логика игры: Шаг 1 - Переменные</h1><hr>
+<p>Теперь, когда наша сцена и интерфейс настроены, пришло время вдохнуть в игру жизнь. Мы напишем скрипт, который будет управлять движением змейки, обработкой столкновений, поеданием еды и отрисовкой графики.</p>
+
+<p>Выберите корневой узел <code>Main</code>, нажмите кнопку <b>"Прикрепить скрипт"</b> и назовите его <code>main.gd</code>.</p>
+
+<p>Наша игра работает на невидимой сетке. Начнем с объявления констант для размеров этой сетки, а также создадим переменные для хранения состояния игры, направления движения и самой змейки.</p>
+
+<pre style="background-color: #1e1e1e; padding: 15px; border-radius: 8px; overflow-x: auto; border: 1px solid #444; color: #d4d4d4;"><code>extends Node2D
+
+const GRID_SIZE = 20
+const GRID_WIDTH = 30
+const GRID_HEIGHT = 20
+
+enum GameState { START, PLAYING, PAUSED, GAME_OVER }
+
+var snake: Array[Vector2i] = []
+var direction: Vector2i = Vector2i.RIGHT
+var next_direction: Vector2i = Vector2i.RIGHT
+var food_position: Vector2i
+var score: int = 0
+var state: GameState = GameState.START</code></pre>
+
+<div class="admonition">
+    <div class="admonition-title">Примечание</div>
+    <div class="admonition-content">
+        Мы используем типизированный массив <code>Array[Vector2i]</code> для хранения координат каждого сегмента тела змейки. Голова змейки всегда находится под индексом <code>0</code>.
+    </div>
+</div>
