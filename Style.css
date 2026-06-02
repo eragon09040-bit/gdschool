@@ -174,3 +174,14 @@ h1 {
     border-top: 1px solid #333;
     text-align: center;
 }
+
+.main-start-btn {
+    font-size: 18px;
+    padding: 10px 24px;
+}
+
+.course-topics{
+    margin: 25px 0;
+    color: #b5d1ec;
+    font-size: 15px;
+}
