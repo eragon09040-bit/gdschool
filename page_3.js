@@ -40,16 +40,14 @@ export const Page3Logic = {
 
         if (!stepContainer) return;
 
-        fetch(fileName)
-            .then(response => {
-                if (!response.ok) throw new Error("Ошибка загрузки файла шага");
-                return response.text();
-            })
-            .then(htmlData => {
+        $.get(fileName)
+            .done((htmlData) => {
                 stepContainer.innerHTML = htmlData;
-                this.updateUI(); 
+                this.updateUI();
             })
-            .catch(error => console.error(error));
+            .fail(() => {
+                console.error("Ошибка загрузки файла шага");
+            });
     },
 
     updateUI: function() {

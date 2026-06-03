@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-html { 
-    scroll-behavior: smooth; 
-    scroll-padding-top: 80px; 
+/* =========================================
+   ГЛОБАЛЬНЫЕ НАСТРОЙКИ
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -11,9 +15,45 @@ body {
     font-family: Consolas, "Courier New", Courier, monospace;
 }
 
-section { 
-    margin-bottom: 60px; 
+section {
+    margin-bottom: 60px;
 }
+
+/* =========================================
+   ТИПОГРАФИКА
+========================================= */
+
+h1 {
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 24px;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.main_page_title {
+    font-family: 'Press Start 2P', monospace;
+    text-align: center;
+    margin-top: 36px;
+    font-size: 28px;
+}
+
+.main_page_under_title {
+    font-family: Consolas, "Courier New", Courier, monospace;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+.course-topics {
+    margin: 25px 0;
+    color: #b5d1ec;
+    font-size: 15px;
+}
+
+/* =========================================
+   БАЗОВЫЕ ЭЛЕМЕНТЫ
+========================================= */
 
 button {
     border-radius: 8px;
@@ -21,7 +61,7 @@ button {
     border: 1px solid #2e4da1;
     color: #b5d1ec;
     padding: 6px 10px;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
     font-family: Consolas, "Courier New", Courier, monospace;
 }
 
@@ -44,12 +84,43 @@ img {
     text-align: center;
 }
 
-/* Примечания */
+/* =========================================
+   МАКЕТ СТРАНИЦЫ
+========================================= */
+
+.main-content {
+    width: 80%;
+    max-width: 1200px;
+    margin: 90px auto 40px auto;
+    background-color: #2b2d31;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.lesson_counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-footer {
+    margin-top: auto;
+    padding: 20px 0;
+    background-color: #1a1c1e;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+/* =========================================
+   ПРИМЕЧАНИЯ (ADMONITION)
+========================================= */
+
 .admonition {
     margin: 20px auto;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Немного усилил тень для темного фона */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     font-size: 15px;
 }
 
@@ -69,20 +140,23 @@ img {
     line-height: 1.6;
 }
 
-/* Пошаговое выполнение */
+/* =========================================
+   ПОШАГОВОЕ ВЫПОЛНЕНИЕ
+========================================= */
+
 .inner-container {
     margin: 20px auto;
     border-radius: 8px;
     overflow: hidden;
     font-size: 15px;
-    border: 1px solid #444444; /* Добавляем тонкую рамку */
+    border: 1px solid #444444;
 }
 
 .inner-title {
     background-color: #3a3d42;
     color: #e0e0e0;
     font-weight: 700;
-    padding: 16px;
+    padding: 10px;
     display: flex;
     align-items: center;
 }
@@ -95,93 +169,50 @@ img {
 }
 
 /* =========================================
-   ГЛАВНЫЙ КОНТЕЙНЕР (АДАПТИВНОСТЬ)
+   КОМПОНЕНТЫ BOOTSTRAP
 ========================================= */
-.main-content {
-    width: 80%;
-    max-width: 1200px;
-    margin: 90px auto 40px auto;
-    background-color: #2b2d31;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+.navbar {
+    background-color: #1a1c1e;
 }
 
-h1 {
-    margin-bottom: 20px;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 24px;
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: grayscale;
+.tutorial-container {
+    background-color: #2a2a2a;
+    border: 1px solid #444444;
 }
 
-@media (max-width: 768px) {
-    .main-content { 
-        width: 95%; 
-        padding: 20px; 
-    }
-}
-
-/* =========================================
-   ДОПОЛНИТЕЛЬНЫЕ ЭЛЕМЕНТЫ УПРАВЛЕНИЯ
-========================================= */
-.card { 
-    background-color: #2d2d2d; 
-    color: #e0e0e0; 
-    border: 1px solid #444444; 
-}
-
-.navbar { 
-    background-color: #1a1c1e; 
-}
-
-.tutorial-container { 
-    background-color: #2a2a2a; 
-    border: 1px solid #444444; 
-}
-
-.form-control { 
-    background-color: #333333; 
-    color: #ffffff; 
-    border: 1px solid #555555; 
-}
-
-/* Убираем белые границы у бургер кнопки */
 .navbar-toggler:focus {
     box-shadow: none !important;
 }
 
-
-
-.main_page_title{
-    font-family: 'Press Start 2P', monospace;
-    text-align: center;
-    margin-top: 36px;
-    font-size: 28px;
-}
-
-.main_page_under_title{
-    font-family: Consolas, "Courier New", Courier, monospace;
-    text-align: center;
-    margin-top: 12px;
-    font-size: 16px;
-}
-
-.site-footer {
-    margin-top: auto;
-    padding: 20px 0;
-    background-color: #1a1c1e;
-    border-top: 1px solid #333;
-    text-align: center;
-}
+/* =========================================
+   КНОПКИ
+========================================= */
 
 .main-start-btn {
     font-size: 18px;
     padding: 10px 24px;
 }
 
-.course-topics{
-    margin: 25px 0;
-    color: #b5d1ec;
-    font-size: 15px;
+/* =========================================
+   АДАПТИВНОСТЬ
+========================================= */
+
+@media (max-width: 768px) {
+    .main-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .lesson_counter {
+        display: none;
+    }
+
+    h1 {
+        margin-bottom: 16px;
+        font-family: 'Press Start 2P', monospace;
+        font-size: 16px;
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: grayscale;
+    }
 }
